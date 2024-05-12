@@ -1,8 +1,9 @@
-
-
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddQueries = () => {
   const currentDate = new Date();
+  const navigate = useNavigate();
   const handleAddQueries = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -18,6 +19,31 @@ const AddQueries = () => {
     const day = currentDate.getDate();
     
     console.log(productName, brandName, image, queryTitle, boycotReason, 'Date: ', year, month, day);
+    const addQuery = {productName, brandName, image, queryTitle, boycotReason, year, month, day};
+
+    // send data to the server
+    fetch('http://localhost:5555/query', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(addQuery)
+      })
+      .then(res => res.json())
+      .then(data => {
+      console.log(data);
+      if(data.insertedId){
+          Swal.fire({
+          title: 'Success!',
+          text: 'You added your query Successfully',
+          icon: 'success',
+          confirmButtonText: 'Awesome'
+          }, navigate('/my-queries'))
+      }
+      })
+
+
+
   }
   return (
     <>
@@ -28,14 +54,14 @@ const AddQueries = () => {
         
         <div className="">
           <form onSubmit={handleAddQueries} className="card-body">
-            <div className="flex">
-                <div className="form-control">
+            <div className="flex gap-5">
+                <div className="form-control grow w-full">
                   <label className="label">
                     <span className="label-text">Product Name</span>
                   </label>
                   <input type="text" name="productName" placeholder="Write the product name" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
+                <div className="form-control grow w-full">
                   <label className="label">
                     <span className="label-text">Brand Name</span>
                   </label>
@@ -63,7 +89,7 @@ const AddQueries = () => {
             </div>
             
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Add query</button>
+              <button className="btn btn-warning">Add query</button>
             </div>
           </form>
         {/* registration form */}

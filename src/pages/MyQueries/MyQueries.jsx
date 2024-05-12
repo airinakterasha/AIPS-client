@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 const MyQueries = () => {
   return (
-    <div>MyQueries
+    <>
       <div className="">
         <div className="">
           {/* banner start */}
@@ -20,8 +20,9 @@ const MyQueries = () => {
           </div>
           {/* banner end */}
         </div>
+        <div className=""></div>
       </div>
-    </div>
+    </>
   )
 }
 
