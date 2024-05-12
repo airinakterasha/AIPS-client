@@ -1,9 +1,28 @@
+import { useContext } from 'react';
 import {NavLink} from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Navbar = () => {
+    const {user, logout} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logout()
+        .then(()=>{
+            console.log('logout successfully')
+        })
+        .catch(()=> {
+            console.log('unsuccesful logout')
+        })
+    }
+
+
     const navMenu = <>
         <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/queries'>Queries</NavLink></li>
+        <li><NavLink to='/recommend-for-me'>Recommendations for me</NavLink></li>
+        <li><NavLink to='/my-queries'>My Queries</NavLink></li>
+        <li><NavLink to='/my-recommendations'>My Recommendations</NavLink></li>
     </>
     return (
         <>
@@ -26,8 +45,20 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end space-x-5">
-                        <Link to='/login'>Login</Link>
-                        <Link to='/registration'>Registration</Link>
+                        {
+                            user ? <>
+                                <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+                                    <img src={user.photoURL} alt={user.displayName} className='w-14 h-14 rounded-full' />
+                                </div>
+                                <a onClick={handleLogOut} className="btn btn-sm btn-accent">Logout</a>
+                            </>
+                            :
+                            <>
+                                <Link to='/login'>Login</Link>
+                                <Link to='/registration'>Registration</Link>
+                            </>
+                        }
+                        
                     </div>
                 </div>
             </div>

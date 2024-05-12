@@ -1,6 +1,8 @@
 import { useContext } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
 
+import { Link } from "react-router-dom";
+
 import { toast } from 'react-toastify';
 
 const Login = () => {
@@ -52,6 +54,9 @@ const Login = () => {
           </div>
           {/* registration form container end */}
           <div className=""></div>
+        </div>
+        <div className="text-center pb-10">
+            <p className="md:text-2xl">Do not have an account? Please <Link to='/registration' className="text-purple-500">Register</Link></p>
         </div>
       </div>
     </>
