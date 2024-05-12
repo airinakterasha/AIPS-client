@@ -1,0 +1,76 @@
+
+
+
+const AddQueries = () => {
+  const currentDate = new Date();
+  const handleAddQueries = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const productName = form.productName.value;
+    const brandName = form.brandName.value;
+    const image = form.image.value;
+    const queryTitle = form.queryTitle.value;
+    const boycotReason = form.boycotReason.value;
+
+    //get date
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // Months are zero-indexed, so add 1
+    const day = currentDate.getDate();
+    
+    console.log(productName, brandName, image, queryTitle, boycotReason, 'Date: ', year, month, day);
+  }
+  return (
+    <>
+      <div className="md:w-1/2 mx-auto">
+        <div className="text-center">
+          <h1 className="text-2xl">Please Register</h1>
+        </div>
+        
+        <div className="">
+          <form onSubmit={handleAddQueries} className="card-body">
+            <div className="flex">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Product Name</span>
+                  </label>
+                  <input type="text" name="productName" placeholder="Write the product name" className="input input-bordered" required />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Brand Name</span>
+                  </label>
+                  <input type="text" name="brandName" placeholder="Brand name of the product" className="input input-bordered" required />
+                </div>
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Image</span>
+              </label>
+              <input type="text" name="image" placeholder="image url" className="input input-bordered" required />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Query Title</span>
+              </label>
+              <input type="text" name="queryTitle" placeholder="Query title" className="input input-bordered" required />
+            </div>
+
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text"> Boycotting Reason Details</span>
+              </label>
+              <input type="text" name="boycotReason" placeholder="Why do you want to boycot the product? write here." className="input input-bordered" required />
+            </div>
+            
+            <div className="form-control mt-6">
+              <button className="btn btn-primary">Add query</button>
+            </div>
+          </form>
+        {/* registration form */}
+        </div>          
+      </div>
+    </>
+  )
+}
+
+export default AddQueries

@@ -50,7 +50,7 @@ const Navbar = () => {
                                 <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
                                     <img src={user.photoURL} alt={user.displayName} className='w-14 h-14 rounded-full' />
                                 </div>
-                                <a onClick={handleLogOut} className="btn btn-sm btn-accent">Logout</a>
+                                <a onClick={handleLogOut} className="btn btn-sm btn-warning">Logout</a>
                             </>
                             :
                             <>

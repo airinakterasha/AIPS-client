@@ -25,7 +25,7 @@ const Registration = () => {
       const user = {name, email, image, createAt}
       updateUserProfile(name, image)
       .then(()=>{
-          fetch('http://localhost:5555/user', {
+          fetch('https://apis-server.vercel.app/user', {
               method: 'POST',
               headers: {
                   'content-type': 'application/json'
