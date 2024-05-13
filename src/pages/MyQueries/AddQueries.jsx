@@ -20,6 +20,9 @@ const AddQueries = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth() + 1; // Months are zero-indexed, so add 1
     const day = currentDate.getDate();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
 
     // Author Information
     const authorName = user?.displayName;
@@ -27,10 +30,10 @@ const AddQueries = () => {
     const authorImage = user?.photoURL;
     
     console.log(productName, brandName, image, queryTitle, boycotReason, 'Date: ', year, month, day, authorName, authorEmail, authorImage);
-    const addQuery = {productName, brandName, image, queryTitle, boycotReason, year, month, day, authorName, authorEmail, authorImage};
+    const addQuery = {productName, brandName, image, queryTitle, boycotReason, year, month, day, hours, minutes, seconds, createdAt : new Date(), authorName, authorEmail, authorImage};
 
     // send data to the server
-    fetch('http://localhost:5555/query', {
+    fetch('https://apis-server.vercel.app/query', {
       method: 'POST',
       headers: {
           'content-type': 'application/json'

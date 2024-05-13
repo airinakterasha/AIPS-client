@@ -47,34 +47,34 @@ const MyQueries = () => {
           </div>
           {/* banner end */}
         </div>
-        <div className="container mx-auto">
-          {/* table start */}
-          <div className="overflow-x-auto">
-            <table className="table">
-              {/* head */}
-              <thead>
-                <tr>
-                  <th>
-                    <label>
-                      <input type="checkbox" className="checkbox" />
-                    </label>
-                  </th>
-                  <th>Query Name</th>
-                  <th>Product name</th>
-                  <th>Brand Name</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* row 1 */}
-                {
-                  userQueries.map(userQuery => <MyQueriesRow key={userQuery._id} userQuery={userQuery}></MyQueriesRow>)
-                }
-                
-              </tbody>              
-            </table>
-          </div>
-          {/* table end */}
+        <div className="container mx-auto my-10">
+          {/* card start */}
+          {
+            userQueries.length === 0 ? (
+              
+                <div className="text-center text-gray-600 space-y-5">
+                  <p>No queries found.</p> 
+                  <p>If you have any query Please add -</p>  
+                  <p>
+                  <Link to='/add-queries'>
+                    <button className="btn btn-warning capitalize">Add your query</button>
+                  </Link></p>                               
+                </div>
+              
+            ) : (
+              
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    {
+                        userQueries.map(userQuery => <MyQueriesRow key={userQuery._id} userQuery={userQuery} userQueries={userQueries} setUserQueries={setUserQueries}></MyQueriesRow>)
+                    }
+                </div>
+              
+            )
+          }
+          
+          
+          
+          {/* card end */}
         </div>
       </div>
     </>

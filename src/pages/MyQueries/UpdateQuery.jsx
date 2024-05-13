@@ -23,7 +23,7 @@ const UpdateQuery = () => {
         const newQueries = {productName, brandName, image, queryTitle, boycotReason};
         console.log(newQueries);
         // send data to the server
-        fetch(`http://localhost:5555/query/${_id}`, {
+        fetch(`https://apis-server.vercel.app/query/${_id}`, {
             method: 'PUT',
             headers: {
             'content-type': 'application/json'

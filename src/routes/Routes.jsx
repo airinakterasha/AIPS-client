@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         {
           path: "/queries",
           element: <Queries></Queries>,
-          loader: () => fetch('http://localhost:5555/query')
+          loader: () => fetch('https://apis-server.vercel.app/query')
         },
         {
           path: "/recommend-for-me",
@@ -42,12 +42,12 @@ const router = createBrowserRouter([
         {
           path: "/add-queries/:id",
           element: <PrivateRoute><SingleQuery></SingleQuery></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5555/query/${params.id}`)
+          loader: ({params}) => fetch(`https://apis-server.vercel.app/query/${params.id}`)
         },
         {
           path: "/update-queries/:id",
           element: <PrivateRoute><UpdateQuery></UpdateQuery></PrivateRoute>, 
-          loader: ({params}) => fetch(`http://localhost:5555/query/${params.id}`)
+          loader: ({params}) => fetch(`https://apis-server.vercel.app/query/${params.id}`)
         },
         // my queries end
         {

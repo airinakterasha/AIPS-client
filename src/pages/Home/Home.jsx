@@ -6,7 +6,7 @@ const Home = () => {
   const [queries, setQueries] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5555/query')
+    fetch('https://apis-server.vercel.app/query')
     .then(res=> res.json())
     .then(data =>{
       console.log(data);

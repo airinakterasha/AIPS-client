@@ -5,6 +5,24 @@ const SingleQuery = () => {
     const queriesdetails = useLoaderData();
     console.log(queriesdetails);
     const {_id, productName, image, queryTitle, brandName, boycotReason, day, month, year} = queriesdetails;
+
+
+    // handle Recommendation
+    const handleRecommendation = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const recomTitle = form.recomTitle.value;
+        const recomProdName = form.recomProdName.value;
+        const recomProdImage = form.recomProdImage.value;
+        const recomReason = form.recomReason.value;
+        console.log(recomTitle, recomProdName, recomProdImage, recomReason)
+
+    
+    }
+     // handle Recommendation end
+
+
+
     return (
         <>
             <div className="">
@@ -55,6 +73,51 @@ const SingleQuery = () => {
                         <div className="p-4 space-y-2 text-sm dark:text-gray-600">
                             <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
                             <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="container mx-auto">
+                    <div className="">
+                        <h1 className="text-center">Add A Recommendation</h1>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2">
+                        <div className="">
+                            posted here
+                        </div>
+                        <div className="">
+                            <h1 className="">form here</h1>
+                            <div className="">
+                                <form onSubmit={handleRecommendation}  className="card-body">
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Recommendation Title</span>
+                                        </label>
+                                        <input type="text" name="recomTitle" placeholder="Recommendation title" className="input input-bordered" required />
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Recommended Product Name</span>
+                                        </label>
+                                        <input type="text" name="recomProdName" placeholder="Recommendation product name" className="input input-bordered" required />
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Recommended Product Image</span>
+                                        </label>
+                                        <input type="text" name="recomProdImage" placeholder="Recommendation product image" className="input input-bordered" required />
+                                    </div>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text"> Recommendation reason</span>
+                                        </label>
+                                        <input type="text" name="recomReason" placeholder="Why do you recommend the product? write here." className="input input-bordered" required />
+                                    </div>
+                                    
+                                    <div className="form-control mt-6">
+                                        <button className="btn btn-warning">Add Recommendation</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
