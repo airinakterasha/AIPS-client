@@ -84,7 +84,7 @@ const Registration = () => {
               <input type="text" name="image" placeholder="Image url" className="input input-bordered" required />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Register</button>
+              <button className="btn btn-warning">Register</button>
             </div>
           </form>
         {/* registration form */}

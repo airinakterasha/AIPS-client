@@ -22,7 +22,8 @@ const router = createBrowserRouter([
         },
         {
           path: "/queries",
-          element: <Queries></Queries>
+          element: <Queries></Queries>,
+          loader: () => fetch('http://localhost:5555/query')
         },
         {
           path: "/recommend-for-me",

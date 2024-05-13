@@ -23,10 +23,11 @@ const AddQueries = () => {
 
     // Author Information
     const authorName = user?.displayName;
+    const authorEmail = user?.email;
     const authorImage = user?.photoURL;
     
-    console.log(productName, brandName, image, queryTitle, boycotReason, 'Date: ', year, month, day, authorName, authorImage);
-    const addQuery = {productName, brandName, image, queryTitle, boycotReason, year, month, day, authorName, authorImage};
+    console.log(productName, brandName, image, queryTitle, boycotReason, 'Date: ', year, month, day, authorName, authorEmail, authorImage);
+    const addQuery = {productName, brandName, image, queryTitle, boycotReason, year, month, day, authorName, authorEmail, authorImage};
 
     // send data to the server
     fetch('http://localhost:5555/query', {

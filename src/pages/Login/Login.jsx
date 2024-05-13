@@ -44,6 +44,7 @@ const Login = () => {
    const handleGoogleLogin = () => {
     loginByGoogle()
     .then(result => {
+        navigate('/')
         toast('Logged in by google successfully')
         console.log(result.user);
     })
@@ -78,7 +79,7 @@ const Login = () => {
                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-warning">Login</button>
               </div>
             </form>
           {/* registration form */}

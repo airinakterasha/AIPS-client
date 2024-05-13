@@ -27,7 +27,7 @@ const Home = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-5">
           {
-            queries.slice(0,6).map(prodQuery => <QueryHome key={prodQuery._id} prodQuery={prodQuery}></QueryHome>)
+            queries.slice(0,50).map(prodQuery => <QueryHome key={prodQuery._id} prodQuery={prodQuery}></QueryHome>)
           }
          
         </div>
