@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AddQueries = () => {
+  const {user} = useContext(AuthContext);
   const currentDate = new Date();
   const navigate = useNavigate();
   const handleAddQueries = (event) => {
@@ -17,9 +20,13 @@ const AddQueries = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth() + 1; // Months are zero-indexed, so add 1
     const day = currentDate.getDate();
+
+    // Author Information
+    const authorName = user?.displayName;
+    const authorImage = user?.photoURL;
     
-    console.log(productName, brandName, image, queryTitle, boycotReason, 'Date: ', year, month, day);
-    const addQuery = {productName, brandName, image, queryTitle, boycotReason, year, month, day};
+    console.log(productName, brandName, image, queryTitle, boycotReason, 'Date: ', year, month, day, authorName, authorImage);
+    const addQuery = {productName, brandName, image, queryTitle, boycotReason, year, month, day, authorName, authorImage};
 
     // send data to the server
     fetch('http://localhost:5555/query', {
@@ -49,7 +56,7 @@ const AddQueries = () => {
     <>
       <div className="md:w-1/2 mx-auto">
         <div className="text-center">
-          <h1 className="text-2xl">Please Register</h1>
+          <h1 className="text-2xl capitalize">Please Add your queries</h1>
         </div>
         
         <div className="">

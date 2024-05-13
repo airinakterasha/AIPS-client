@@ -9,6 +9,7 @@ import MyQueries from "../pages/MyQueries/MyQueries";
 import MyRecommendations from "../pages/MyRecommendations/MyRecommendations";
 import PrivateRoute from "../routes/PrivateRoute"
 import AddQueries from "../pages/MyQueries/AddQueries";
+import SingleQuery from "../pages/MyQueries/SingleQuery";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
         {
           path: "/add-queries",
           element: <PrivateRoute><AddQueries></AddQueries></PrivateRoute> 
+        },
+        {
+          path: "/add-queries/:id",
+          element: <PrivateRoute><SingleQuery></SingleQuery></PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5555/query/${params.id}`)
         },
         // my queries end
         {
