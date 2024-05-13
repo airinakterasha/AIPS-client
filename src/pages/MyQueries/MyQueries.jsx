@@ -62,7 +62,7 @@ const MyQueries = () => {
                   <th>Query Name</th>
                   <th>Product name</th>
                   <th>Brand Name</th>
-                  <th></th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>

@@ -1,7 +1,7 @@
-
+import { Link } from "react-router-dom";
 
 const MyQueriesRow = ({userQuery}) => {
-    const {productName, brandName, image, queryTitle} = userQuery;
+    const {_id, productName, brandName, image, queryTitle} = userQuery;
     console.log(productName, brandName, image, queryTitle)
     return (
         <>
@@ -31,7 +31,12 @@ const MyQueriesRow = ({userQuery}) => {
                 </td>
                 <td>Purple</td>
                 <th>
-                    <button className="btn btn-ghost btn-xs">details</button>
+                    <button className="btn btn-ghost btn-xs">View details</button>
+                    <Link to={`/update-queries/${_id}`}>
+                        <button className="btn btn-warning btn-xs">Update</button>
+                    </Link>
+                    
+                    <button className="btn btn-ghost btn-xs">Delete</button>
                 </th>
             </tr>
         </>
