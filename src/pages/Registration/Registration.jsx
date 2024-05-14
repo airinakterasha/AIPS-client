@@ -52,11 +52,10 @@ const Registration = () => {
   }
   return (
     <>
-      <div className="md:w-1/2 mx-auto">
-        <div className="text-center">
-          <h1 className="text-2xl">Please Register</h1>
+      <div className="lg:w-1/2 mx-auto">
+        <div className="text-center bg-warning my-14">
+          <h1 className="md:text-4xl font-bold py-4 capitalize">Please Register</h1>
         </div>
-        
         <div className="">
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
@@ -90,7 +89,7 @@ const Registration = () => {
         {/* registration form */}
         </div>
         <div className="text-center pb-10">
-            <p className="md:text-2xl">Already have an account? Please <Link to='/login' className="text-purple-500">Login</Link></p>
+            <p className="md:text-2xl">Already have an account? Please <Link to='/login' className="text-accent">Login</Link></p>
         </div>
           
       </div>

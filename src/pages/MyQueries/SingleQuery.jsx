@@ -25,7 +25,7 @@ const SingleQuery = () => {
         .catch(err => {
             console.log(err);
         })
-    },[])
+    },[recommendations])
     
 
 
@@ -75,8 +75,9 @@ const SingleQuery = () => {
             console.log(data);
             if(data.insertedId){
                 toast('You added your recommendation Successfully, Please refresh the page')
-                const remaining = recommendations.filter(com => com._id !== _id)
-                setRecommendations(remaining); 
+                //const remaining = recommendations.filter(com => com._id !== _id)
+                setRecommendations(recommendations); 
+                form.reset();
                 }
             })
     

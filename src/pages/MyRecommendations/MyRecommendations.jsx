@@ -24,7 +24,7 @@ const MyRecommendations = () => {
   
   return (
     <>
-      <div className="container mx-auto md:h-screen">
+      <div className="container mx-auto md:min-h-screen">
         <div className="">
           <div className="text-center bg-warning my-14">
             <h1 className="md:text-4xl font-bold py-4 capitalize">You have added your {recommendations.length} recommendations</h1>

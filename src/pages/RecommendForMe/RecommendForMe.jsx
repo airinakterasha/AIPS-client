@@ -22,7 +22,7 @@ const RecommendForMe = () => {
    },[])
   return (
     <>
-      <div className="container mx-auto md:h-screen my-10">
+      <div className="container mx-auto md:min-h-screen my-10">
         <div className="">         
           <div className="text-center bg-warning my-14">
             <h1 className="md:text-4xl font-bold py-4 capitalize">Others recommendations are showing here</h1>

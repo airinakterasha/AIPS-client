@@ -46,52 +46,51 @@ const UpdateQuery = () => {
     }
     return (
         <>
-            <div className="md:w-1/2 mx-auto">
-            <div className="text-center">
-            <h1 className="text-2xl capitalize">Update query</h1>
-            </div>
-            
-            <div className="">
-            <form onSubmit={handleUpdateQueries} className="card-body">
-                <div className="flex gap-5">
-                    <div className="form-control grow w-full">
-                    <label className="label">
-                        <span className="label-text">Product Name</span>
-                    </label>
-                    <input type="text" name="productName" defaultValue={productName}  placeholder="Write the product name" className="input input-bordered" required />
-                    </div>
-                    <div className="form-control grow w-full">
-                    <label className="label">
-                        <span className="label-text">Brand Name</span>
-                    </label>
-                    <input type="text" name="brandName" defaultValue={brandName} placeholder="Brand name of the product" className="input input-bordered" required />
-                    </div>
+            <div className="lg:w-1/2 mx-auto">
+                <div className="text-center bg-warning my-14">
+                    <h1 className="md:text-4xl font-bold py-4 capitalize">Update query</h1>
                 </div>
-                <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Image</span>
-                </label>
-                <input type="text" name="image" defaultValue={image} placeholder="image url" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                <label className="label">
-                    <span className="label-text">Query Title</span>
-                </label>
-                <input type="text" name="queryTitle" defaultValue={queryTitle} placeholder="Query title" className="input input-bordered" required />
-                </div>
+                <div className="">
+                    <form onSubmit={handleUpdateQueries} className="card-body">
+                        <div className="flex gap-5">
+                            <div className="form-control grow w-full">
+                            <label className="label">
+                                <span className="label-text">Product Name</span>
+                            </label>
+                            <input type="text" name="productName" defaultValue={productName}  placeholder="Write the product name" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control grow w-full">
+                            <label className="label">
+                                <span className="label-text">Brand Name</span>
+                            </label>
+                            <input type="text" name="brandName" defaultValue={brandName} placeholder="Brand name of the product" className="input input-bordered" required />
+                            </div>
+                        </div>
+                        <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Image</span>
+                        </label>
+                        <input type="text" name="image" defaultValue={image} placeholder="image url" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Query Title</span>
+                        </label>
+                        <input type="text" name="queryTitle" defaultValue={queryTitle} placeholder="Query title" className="input input-bordered" required />
+                        </div>
 
-                <div className="form-control">
-                <label className="label">
-                    <span className="label-text"> Boycotting Reason Details</span>
-                </label>
-                <input type="text" name="boycotReason" defaultValue={boycotReason} placeholder="Why do you want to boycot the product? write here." className="input input-bordered" required />
-                </div>
-                
-                <div className="form-control mt-6">
-                    <button className="btn btn-warning">Update query</button>
-                </div>
-            </form>
-            {/* registration form */}
+                        <div className="form-control">
+                        <label className="label">
+                            <span className="label-text"> Boycotting Reason Details</span>
+                        </label>
+                        <input type="text" name="boycotReason" defaultValue={boycotReason} placeholder="Why do you want to boycot the product? write here." className="input input-bordered" required />
+                        </div>
+                        
+                        <div className="form-control mt-6">
+                            <button className="btn btn-warning">Update query</button>
+                        </div>
+                    </form>
+                {/* registration form */}
             </div>          
         </div>
         </>
