@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import {NavLink} from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../providers/AuthProvider';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Navbar = () => {
     const {user, logout} = useContext(AuthContext);
@@ -37,7 +37,7 @@ const Navbar = () => {
                             {navMenu}
                         </ul>
                         </div>
-                        <a className="btn btn-ghost text-xl">daisyUI</a>
+                        <Link to='/' className="btn btn-ghost text-2xl text-warning font-bold">AIPS</Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">

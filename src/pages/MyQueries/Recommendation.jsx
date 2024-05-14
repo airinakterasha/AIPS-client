@@ -1,7 +1,7 @@
 
 
 const Recommendation = ({recommendByOne}) => {
-  const { recomTitle, recomProdName, recomProdImage, recomReason, queryId, queryTitle, productName, recommenderName, recommenderEmail} = recommendByOne
+  const {_id, recomTitle, recomProdName, recomProdImage, recomReason, queryId, queryTitle, productName, recommenderName, recommenderEmail} = recommendByOne
   return (
     <>
       <div className="">

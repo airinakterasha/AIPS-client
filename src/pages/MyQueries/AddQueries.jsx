@@ -54,15 +54,12 @@ const AddQueries = () => {
           }, navigate('/my-queries'))
       }
       })
-
-
-
   }
   return (
     <>
-      <div className="md:w-1/2 mx-auto">
-        <div className="text-center">
-          <h1 className="text-2xl capitalize">Please Add your queries</h1>
+      <div className="md:w-1/2 mx-auto p-10">
+        <div className="text-center bg-warning my-5">
+          <h1 className="md:text-4xl font-bold py-4 capitalize">Please Add your queries</h1>
         </div>
         
         <div className="">
