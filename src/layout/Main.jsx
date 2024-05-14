@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom"
 import Navbar from "../components/Header/Navbar"
+import Footer from "../components/Header/Footer";
 
 // toast
 import { ToastContainer } from 'react-toastify';
@@ -13,6 +14,7 @@ const Main = () => {
         </header>
         <ToastContainer></ToastContainer>
         <Outlet></Outlet>
+        <Footer></Footer>
     </>
   )
 }

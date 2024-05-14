@@ -7,6 +7,8 @@ const AddQueries = () => {
   const {user} = useContext(AuthContext);
   const currentDate = new Date();
   const navigate = useNavigate();
+
+  
   const handleAddQueries = (event) => {
     event.preventDefault();
     const form = event.target;
