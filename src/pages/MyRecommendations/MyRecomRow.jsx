@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 
 
 const MyRecomRow = ({recomSingle, recommendations, setRecommendations}) => {
-    const {_id, recomProdName} = recomSingle;
+    const {_id, recomTitle, recomProdName, recomProdImage, userName, userEmail, day, month, year, hours, minutes, seconds} = recomSingle;
 
     //delete
     const handledelete = (_id) => {
@@ -43,30 +43,29 @@ const MyRecomRow = ({recomSingle, recommendations, setRecommendations}) => {
     return (
         <>
             <tr>
-                <th>
-                    <label>
-                        <input type="checkbox" className="checkbox" />
-                    </label>
-                </th>
+                
                 <td>
                     <div className="flex items-center gap-3">
                         <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <img src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                            <img src={recomProdImage} alt="Avatar Tailwind CSS Component" />
                         </div>
                         </div>
                         <div>
-                        <div className="font-bold">{recomProdName}</div>
-                        <div className="text-sm opacity-50">United States</div>
+                        <div className="font-bold">{recomTitle}</div>
+                        <div className="text-sm opacity-50">{recomProdName}</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    Zemlak, Daniel and Leannon
+                    {userName}
                     <br/>
-                    <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                    <span className="badge badge-ghost badge-sm">{userEmail}</span>
                 </td>
-                <td>Purple</td>
+                <td>
+                    <div className="w-40"><span className="font-bold">Date:</span> {`${day} - ${month} - ${year}`}</div>
+                    <div className="w-40"><span className="font-bold">Time:</span> {`${hours}h - ${minutes}m - ${seconds}s`}</div>
+                </td>
                 <th>
                     <button onClick={() => {handledelete(_id)}} className="btn btn-warning btn-xs">delete</button>
                 </th>

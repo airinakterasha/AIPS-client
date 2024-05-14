@@ -24,38 +24,36 @@ const MyRecommendations = () => {
   
   return (
     <>
-      <div className="container mx-auto">
+      <div className="container mx-auto md:h-screen">
         <div className="">
-          <div className="my-5">
-            <h1 className="text-center">Here, you have added your {recommendations.length} recommendations</h1>
+          <div className="text-center bg-warning my-14">
+            <h1 className="md:text-4xl font-bold py-4 capitalize">You have added your {recommendations.length} recommendations</h1>
           </div>
-          
+          {recommendations.length === 0 ? (
+                <p className="text-center md:text-2xl my-28 font-bold">Sorry! You do not have added any recommendations.</p>
+              ) : (
           <div className="overflow-x-auto">
             <table className="table">
               {/* head */}
               <thead>
                 <tr>
-                  <th>
-                    <label>
-                      <input type="checkbox" className="checkbox" />
-                    </label>
-                  </th>
-                  <th>Name</th>
-                  <th>Job</th>
-                  <th>Favorite Color</th>
+                  <th>Your Recommend Information</th>
+                  <th>User Information</th>
+                  <th>Time and Date</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 {/* row 1 */}
                 {
-                  recommendations.map(recomSingle => <MyRecomRow key={recomSingle._id} recomSingle={recomSingle} recommendations={recommendations}></MyRecomRow>)
+                  recommendations.map(recomSingle => <MyRecomRow key={recomSingle._id} recomSingle={recomSingle} recommendations={recommendations} setRecommendations={setRecommendations}></MyRecomRow>)
                 }
               </tbody>
               {/* foot */}
             </table>
           </div>
-        </div>
+          )}
+        </div>      
       </div>
     </>
   )

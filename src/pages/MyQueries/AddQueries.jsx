@@ -57,14 +57,14 @@ const AddQueries = () => {
   }
   return (
     <>
-      <div className="md:w-1/2 mx-auto p-10">
+      <div className="lg:w-1/2 mx-auto py-10">
         <div className="text-center bg-warning my-5">
           <h1 className="md:text-4xl font-bold py-4 capitalize">Please Add your queries</h1>
         </div>
         
         <div className="">
           <form onSubmit={handleAddQueries} className="card-body">
-            <div className="flex gap-5">
+            <div className="flex flex-col md:flex-row gap-5">
                 <div className="form-control grow w-full">
                   <label className="label">
                     <span className="label-text">Product Name</span>
