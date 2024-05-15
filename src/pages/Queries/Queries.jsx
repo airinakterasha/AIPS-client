@@ -5,7 +5,7 @@ import QuerySingle from "./QuerySingle";
 const Queries = () => {
   const allQueries = useLoaderData();
   console.log(allQueries);
-  
+
   return (
     <>
       <div className="container mx-auto ">

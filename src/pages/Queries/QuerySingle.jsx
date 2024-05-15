@@ -1,7 +1,25 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const QuerySingle = ({query}) => {
-    const {_id, productName, brandName, image, queryTitle, boycotReason, year, month, day, hours, minutes, seconds, authorName, authorEmail, authorImage} = query;
+    const {_id, productName, brandName, image, queryTitle, boycotReason, year, month, day, hours, minutes, seconds, createdAt, authorName, authorEmail, authorImage} = query;
+
+    // State to store recommendations
+    const [recommendations, setRecommendations] = useState([]);
+    console.log('this is recommendation', recommendations);
+
+    //Get recommendation data   
+    useEffect(()=>{
+        fetch(`http://localhost:5555/recommendcomment/${_id}`)
+        .then(res => res.json())
+        .then(data => {
+            setRecommendations(data)
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    },[recommendations]);
+
     return (
         <>
             <div className="px-5 md:px-0">
@@ -21,7 +39,7 @@ const QuerySingle = ({query}) => {
                         </Link>
                     </div>
                     <img src={image} alt="" className="object-cover object-center w-full h-72 dark:bg-gray-500" />
-                    <div className="p-3">
+                    <div className="py-3 px-6">
                         <div className="">
                             <h1 className="md:text-2xl font-bold">{queryTitle}</h1>
                             <div className="">
@@ -35,8 +53,12 @@ const QuerySingle = ({query}) => {
                                 <p>
                                     <span className="font-bold">Time:</span> {`${hours}h - ${minutes}m - ${seconds}s`}
                                 </p>
+                                
                             </div>
+                            <p>created At - {createdAt}</p>
                             <p><span className="font-bold">Alternative reason: </span>{boycotReason}</p>
+                            {/* <p>Recommendation count: {queryTitle.recommendations.count}</p> */}
+                            <p><span className="font-bold">Recommendation count:</span> {recommendations.length} person recommend the query</p>
                         </div>
                        
                     </div>

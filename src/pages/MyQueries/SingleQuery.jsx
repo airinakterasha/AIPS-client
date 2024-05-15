@@ -54,6 +54,7 @@ const SingleQuery = () => {
             recommenderEmail: user?.email,
             recommenderName: user?.displayName,
             recommenderImage: user?.photoURL,
+            recomCount: 0,
             day: day, 
             month: month, 
             year: year,
