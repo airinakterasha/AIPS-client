@@ -36,7 +36,7 @@ const UpdateQuery = () => {
             if(data.modifiedCount>0){
             Swal.fire({
                 title: 'Success!',
-                text: 'Your Tourist Spot Updated Successfully',
+                text: 'Your Query Updated Successfully',
                 icon: 'success',
                 confirmButtonText: 'Excellent'
             }, navigate('/my-queries'))
