@@ -4,7 +4,7 @@ const QuerySingle = ({query}) => {
     const {_id, productName, brandName, image, queryTitle, boycotReason, year, month, day, hours, minutes, seconds, authorName, authorEmail, authorImage} = query;
     return (
         <>
-            <div className="">
+            <div className="px-5 md:px-0">
                 <div className="rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
                     <div className="flex items-center justify-between p-3">
                         <div className="flex items-center space-x-2">

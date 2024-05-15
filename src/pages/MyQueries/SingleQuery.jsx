@@ -85,10 +85,11 @@ const SingleQuery = () => {
 
     return (
         <>
-            <div className="py-14">
-                <div className="">
+            <div className="container mx-auto py-14">
+                <div className="grid grid-cols-1 lg:grid-cols-12">
                     {/* query information */}
-                    <div className="p-5 mx-auto sm:p-10 md:p-16 text-black">
+                    <div className="col-span-8 p-5 mx-auto sm:p-10 md:p-16 text-black">
+                        
                         <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
                             <img src={image} alt="" className="w-full h-60 sm:h-96 dark:bg-gray-500" />
                             <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-warning">
@@ -99,92 +100,44 @@ const SingleQuery = () => {
                                     <p><span className="font-bold">Product name: </span>{productName}</p>
                                     <p><span className="font-bold">Brand name: </span>{brandName}</p>
                                     <p><span className="font-bold">Alternative reason: </span>{boycotReason}</p>
-                                    <p><span className="font-bold">Rcommendation count: </span>0</p>
+                                    <div className="">
+                                        <div className="flex flex-col md:flex-row">
+                                            <div className="w-52"><span className="font-bold">Posted Date:</span> {`${day} - ${month} - ${year}`}</div>
+                                            <div className="w-52"><span className="font-bold">Posted Time:</span> {`${hours}h - ${minutes}m - ${seconds}s`}</div>
+                                        </div>
+                                    </div>
+                                    <p><span className="font-bold">Rcommendation count: </span>{recommendations.length}</p>
                                 </div> 
+
+                                {/* user information */}
+                                <div className="pt-3">
+                                    <p className="font-bold mb-2">Posted By: </p>
+                                    <div className="flex justify-between">
+                                        <div className="flex space-x-4">
+                                            <div>
+                                                <img src={authorImage} alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold">{authorName}</h4>
+                                                <span className="text-xs dark:text-gray-600">{authorEmail}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* user information */}
                             </div>
+                            
                         </div>
+                       
                     </div>
                     {/* query information end*/}
-
-                </div>
-                
-                <div className="">
-                    <h1 className="text-center">User information</h1>
-                    <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
-                        <div className="flex justify-between p-4">
-                            <div className="flex space-x-4">
-                                <div>
-                                    <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
-                                </div>
-                                <div>
-                                    <h4 className="font-bold">Leroy Jenkins</h4>
-                                    <span className="text-xs dark:text-gray-600">2 days ago</span>
-                                </div>
-                            </div>
-                            <div className="flex items-center space-x-2 dark:text-yellow-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
-                                <span className="text-xl font-bold">4.5</span>
-                            </div>
-                        </div>
-                        <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                            <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="container mx-auto">
-                    <div className="">
-                        <h1 className="text-center">Add A Recommendation</h1>
-                        {/* recommendation start */}
+                    {/* column start */}
+                    <div className="col-span-4">
                         <div className="">
-                            <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
-                                <div className="flex justify-between p-4">
-                                    <div className="flex space-x-4">
-                                        <div>
-                                            <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold">Leroy Jenkins</h4>
-                                            <span className="text-xs dark:text-gray-600">2 days ago</span>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center space-x-2 dark:text-yellow-700">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                            <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                        </svg>
-                                        <span className="text-xl font-bold">4.5</span>
-                                    </div>
-                                </div>
-                                <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                                    <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                                    <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
-                                </div>
-                            </div>
-                        </div>
-                        {/* recommendation end */}
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2">
-                        <div className="">
-                            posted here
-
-                            <div className="">
-                                <h1 className="">{recommendations.length}</h1>
-                            </div>
-                            <div className="">
-                                <div className="space-y-5">
-                                    {
-                                        recommendations.map(recommendByOne => <Recommendation key={recommendByOne._id} recommendByOne={recommendByOne} queriesdetails={queriesdetails}></Recommendation>)
-                                    }
-                                   
-                                </div>
-                            </div>
-                        </div>
-                        <div className="">
-                            <h1 className="">form here</h1>
+                            {/* form start */}
                             <div className="">
                                 <form onSubmit={handleRecommendation}  className="card-body">
+                                    <h1 className="font-bold text-center mb-3">Please feel free to put your recommendation here</h1>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Recommendation Title</span>
@@ -215,9 +168,27 @@ const SingleQuery = () => {
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                            {/* form end */}
+                            <div className="">
+                                <h1 className="text-xl md:2xl px-10 font-bold">{recommendations.length} people recommend for the query.</h1>
+                            </div>
+                            {/* display recommendation start  */}
+                            <div className="">
+                                
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 space-y-5">
+                                    {
+                                        recommendations.map(recommendByOne => <Recommendation key={recommendByOne._id} recommendByOne={recommendByOne} queriesdetails={queriesdetails}></Recommendation>)
+                                    }
+                                   
+                                </div>
+                            </div>
+                            {/* display recommendation  end */}
+                        </div> 
                     </div>
+                    {/* column end */}
+
                 </div>
+                 
             </div>
         </>
     )
