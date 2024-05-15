@@ -7,8 +7,7 @@ const RecommendForMe = () => {
   const {user} = useContext(AuthContext)
    // State to store recommendations
    const [recommendations, setRecommendations] = useState([]);
-   console.log('this is recommendation for me', recommendations);
- 
+
    //Get recommendation data   
    useEffect(()=>{
        fetch(`https://apis-server.vercel.app/recomforme/${user?.email}`)

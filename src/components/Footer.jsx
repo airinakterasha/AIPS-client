@@ -12,10 +12,10 @@ const Footer = () => {
                     <span className="">©2024 All rights reserved</span>
                 </div>
                 <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
-                    <a rel="noopener noreferrer" href="https://mail.google.com/" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-600 dark:text-gray-50">
+                    <a rel="noopener noreferrer" href="https://www.facebook.com/" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-600 dark:text-gray-50">
                         <FaFacebookSquare />
                     </a>
-                    <a rel="noopener noreferrer" href="https://mail.google.com/" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-600 dark:text-gray-50">
+                    <a rel="noopener noreferrer" href="https://www.linkedin.com/in/airin-akter/" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-600 dark:text-gray-50">
                         <FaLinkedin />
                     </a>
                     <a rel="noopener noreferrer" href="https://mail.google.com/" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-600 dark:text-gray-50">

@@ -8,7 +8,6 @@ const MyRecommendations = () => {
 
   // State to store recommendations
   const [recommendations, setRecommendations] = useState([]);
-  console.log('this is recommendation', recommendations);
 
   //Get recommendation data   
   useEffect(()=>{
