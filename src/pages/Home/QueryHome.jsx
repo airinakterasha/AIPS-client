@@ -1,7 +1,7 @@
  import { Link } from "react-router-dom"
 
 const QueryHome = ({prodQuery}) => {
-  const {_id, productName, image, queryTitle, brandName, boycotReason, day, month, year, authorName, authorImage} = prodQuery
+  const {_id, productName, image, queryTitle, brandName, boycotReason, day, month, year, createdAt, authorName, authorImage} = prodQuery
   return (
     <>
       <div className="">
@@ -23,6 +23,7 @@ const QueryHome = ({prodQuery}) => {
               <p><span className="font-bold">Product: </span>{productName}</p>
               <p><span className="font-bold">Brand: </span>{brandName}</p>
             </div>
+            <p className="hidden">created At - {createdAt}</p>
           </div>
         </Link>
       </div>

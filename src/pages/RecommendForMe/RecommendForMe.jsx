@@ -11,7 +11,7 @@ const RecommendForMe = () => {
  
    //Get recommendation data   
    useEffect(()=>{
-       fetch(`http://localhost:5555/recomforme/${user?.email}`)
+       fetch(`https://apis-server.vercel.app/recomforme/${user?.email}`)
        .then(res => res.json())
        .then(data => {
            setRecommendations(data)

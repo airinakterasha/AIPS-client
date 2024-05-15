@@ -19,7 +19,7 @@ const MyRecomRow = ({recomSingle, recommendations, setRecommendations}) => {
           .then((result) => {
             if (result.isConfirmed) {              
               //console.log('delete confirm');
-              fetch(`http://localhost:5555/recommendation/${_id}`, {
+              fetch(`https://apis-server.vercel.app/recommendation/${_id}`, {
                 method: 'DELETE'
               })
               .then(res => res.json())

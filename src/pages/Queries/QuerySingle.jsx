@@ -10,7 +10,7 @@ const QuerySingle = ({query}) => {
 
     //Get recommendation data   
     useEffect(()=>{
-        fetch(`http://localhost:5555/recommendcomment/${_id}`)
+        fetch(`https://apis-server.vercel.app/recommendcomment/${_id}`)
         .then(res => res.json())
         .then(data => {
             setRecommendations(data)
@@ -55,7 +55,7 @@ const QuerySingle = ({query}) => {
                                 </p>
                                 
                             </div>
-                            <p>created At - {createdAt}</p>
+                            <p className="hidden">created At - {createdAt}</p>
                             <p><span className="font-bold">Alternative reason: </span>{boycotReason}</p>
                             {/* <p>Recommendation count: {queryTitle.recommendations.count}</p> */}
                             <p><span className="font-bold">Recommendation count:</span> {recommendations.length} person recommend the query</p>

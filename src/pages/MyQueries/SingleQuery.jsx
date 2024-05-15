@@ -17,7 +17,7 @@ const SingleQuery = () => {
 
     //Get recommendation data   
     useEffect(()=>{
-        fetch(`http://localhost:5555/recommendcomment/${_id}`)
+        fetch(`https://apis-server.vercel.app/recommendcomment/${_id}`)
         .then(res => res.json())
         .then(data => {
             setRecommendations(data)
@@ -64,7 +64,7 @@ const SingleQuery = () => {
 
 
         // send data to the server
-        fetch('http://localhost:5555/recommendation', {
+        fetch('https://apis-server.vercel.app/recommendation', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
