@@ -104,7 +104,7 @@ const SingleQuery = () => {
                                     <div className="">
                                         <div className="flex flex-col md:flex-row">
                                             <div className="w-52"><span className="font-bold">Posted Date:</span> {`${day} - ${month} - ${year}`}</div>
-                                            <div className="w-52"><span className="font-bold">Posted Time:</span> {`${hours}h - ${minutes}m - ${seconds}s`}</div>
+                                            <div className="w-64"><span className="font-bold">Posted Time:</span> {`${hours}h - ${minutes}m - ${seconds}s`}</div>
                                         </div>
                                     </div>
                                     <p><span className="font-bold">Rcommendation count: </span>{recommendations.length}</p>
