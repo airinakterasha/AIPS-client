@@ -75,7 +75,7 @@ const SingleQuery = () => {
             .then(data => {
             console.log(data);
             if(data.insertedId){
-                toast('You added your recommendation Successfully, Please refresh the page')
+                toast('You added your recommendation Successfully.')
                 setRecommendations(recommendations); 
                 form.reset();
                 }
