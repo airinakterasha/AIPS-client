@@ -49,12 +49,21 @@ const MyQueriesRow = ({userQuery, userQueries, setUserQueries}) => {
                 <div className="card-body">
                     <h2 className="card-title">
                         {queryTitle}
-                        <div className="badge badge-secondary">NEW</div>
                     </h2>
-                    <p>{productName}</p>
-                    <p>{brandName}</p>
-                    <p>Date: {`${day} - ${month}  - ${year}`}, Time: {`${hours}h - ${minutes}m - ${seconds}s`} </p>
-                    <div className="card-actions justify-end">
+                    <div className="space-y-3">
+                        <p><span className="font-bold">Product name: </span>{productName}</p>
+                        <p><span className="font-bold">Brand name: </span>{brandName}</p>
+                    </div>
+                    <div className="flex">
+                        <p>
+                            <span className="font-bold">Date:</span> {`${day} - ${month} - ${year}`} 
+                        </p> 
+                        <p>
+                            <span className="font-bold">Time:</span> {`${hours}h - ${minutes}m - ${seconds}s`}
+                        </p>
+                    </div>
+
+                    <div className="card-actions justify-end mt-3">
                         <Link to={`/add-queries/${_id}`}>
                             <button className="btn btn-accent btn-xs">View details</button>
                         </Link>

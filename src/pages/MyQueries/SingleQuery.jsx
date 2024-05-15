@@ -75,7 +75,6 @@ const SingleQuery = () => {
             console.log(data);
             if(data.insertedId){
                 toast('You added your recommendation Successfully, Please refresh the page')
-                //const remaining = recommendations.filter(com => com._id !== _id)
                 setRecommendations(recommendations); 
                 form.reset();
                 }
@@ -86,31 +85,29 @@ const SingleQuery = () => {
 
     return (
         <>
-            <div className="">
-                <div className="text-center">
-                    <h1 className="">{`${day} - ${month} - ${year}`}</h1>
-                    <h1 className="">{productName}</h1>
-                </div>
-                <div className="p-5 mx-auto sm:p-10 md:p-16 dark:bg-gray-100 dark:text-gray-800">
-                    <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
-                        <img src={image} alt="" className="w-full h-60 sm:h-96 dark:bg-gray-500" />
-                        <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md dark:bg-gray-50">
-                            <div className="space-y-2">
-                                <a rel="noopener noreferrer" href="#" className="inline-block text-2xl font-semibold sm:text-3xl">{queryTitle}</a>
-                                <p>{productName}</p>
-                                <p className="text-xs dark:text-gray-600">By
-                                    <a rel="noopener noreferrer" href="#" className="text-xs hover:underline">{brandName}</a>
-                                </p>
+            <div className="py-14">
+                <div className="">
+                    {/* query information */}
+                    <div className="p-5 mx-auto sm:p-10 md:p-16 text-black">
+                        <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
+                            <img src={image} alt="" className="w-full h-60 sm:h-96 dark:bg-gray-500" />
+                            <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-warning">
+                                <div className="">
+                                    <h2 rel="noopener noreferrer" className="inline-block text-2xl font-semibold sm:text-3xl">{queryTitle}</h2>   
+                                </div>
+                                <div className="space-y-3">
+                                    <p><span className="font-bold">Product name: </span>{productName}</p>
+                                    <p><span className="font-bold">Brand name: </span>{brandName}</p>
+                                    <p><span className="font-bold">Alternative reason: </span>{boycotReason}</p>
+                                    <p><span className="font-bold">Rcommendation count: </span>0</p>
+                                </div> 
                             </div>
-                            <div className="dark:text-gray-800">
-                                <p>{boycotReason}</p>
-                            </div>
-                        </div>
-                        <div className="">
-                            <p className="">REcommendation count</p>
                         </div>
                     </div>
+                    {/* query information end*/}
+
                 </div>
+                
                 <div className="">
                     <h1 className="text-center">User information</h1>
                     <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">

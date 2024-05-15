@@ -8,11 +8,11 @@ const Queries = () => {
   
   return (
     <>
-      <div className="container mx-auto">
-        <div className="my-5">
-          <h1 className="text-center">All Queries</h1>
+      <div className="container mx-auto ">
+        <div className="text-center bg-warning my-14">
+          <h1 className="md:text-4xl font-bold py-4 capitalize">All Queries</h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
           {
             allQueries.map(query => <QuerySingle key={query._id} query={query}></QuerySingle>)
           }

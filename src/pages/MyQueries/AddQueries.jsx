@@ -80,7 +80,7 @@ const AddQueries = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Image</span>
+                <span className="label-text">Product Image</span>
               </label>
               <input type="text" name="image" placeholder="image url" className="input input-bordered" required />
             </div>

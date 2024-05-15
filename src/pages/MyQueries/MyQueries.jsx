@@ -52,7 +52,7 @@ const MyQueries = () => {
           {
             userQueries.length === 0 ? (
               
-                <div className="text-center text-gray-600 space-y-5">
+                <div className="text-center text-gray-600 space-y-5 my-24">
                   <p>No queries found.</p> 
                   <p>If you have any query Please add -</p>  
                   <p>
@@ -62,12 +62,17 @@ const MyQueries = () => {
                 </div>
               
             ) : (
-              
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    {
-                        userQueries.map(userQuery => <MyQueriesRow key={userQuery._id} userQuery={userQuery} userQueries={userQueries} setUserQueries={setUserQueries}></MyQueriesRow>)
-                    }
-                </div>
+
+              <div className="">
+                  <div className="text-center bg-warning my-14">
+                    <h1 className="md:text-4xl font-bold py-4 capitalize">My Queries</h1>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {
+                          userQueries.map(userQuery => <MyQueriesRow key={userQuery._id} userQuery={userQuery} userQueries={userQueries} setUserQueries={setUserQueries}></MyQueriesRow>)
+                      }
+                  </div>
+              </div>
               
             )
           }
