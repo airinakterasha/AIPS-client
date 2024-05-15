@@ -83,7 +83,7 @@ const Home = () => {
    
    // fetch recomProduct
   useEffect(()=>{
-    fetch('http://localhost:5555/recommendation')
+    fetch('https://apis-server.vercel.app/recommendation')
     .then(res=> res.json())
     .then(data =>{
       //console.log(data);
