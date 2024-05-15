@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const QueryList = ({listViewQuery}) => {
     const {_id, productName, brandName, image, queryTitle, boycotReason, year, month, day, hours, minutes, seconds, createdAt, authorName, authorEmail, authorImage} = listViewQuery;
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
-            <figure><img src={image} alt="Album"/></figure>
+        <div className="card md:card-side lg:card-side bg-base-100 shadow-xl">
+            <figure><img src={image} alt="Album" className="md:w-[400px]"/></figure>
             <div className="card-body">
                 <div className="flex items-center space-x-2">
                     <img src={authorImage} alt={authorName} className="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-300" />

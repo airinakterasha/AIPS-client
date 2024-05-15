@@ -26,7 +26,7 @@ const Queries = () => {
         <div className="text-center bg-warning my-14">
           <h1 className="md:text-4xl font-bold py-4 capitalize">All Queries</h1>
         </div>
-        <div className="flex gap-10 mb-10">
+        <div className="flex gap-10 mb-10 ps-10">
           <div onClick={toggleGridView} className="text-4xl btn btn-warning"><BsGrid3X3Gap /></div>
           <div onClick={toggleListView} className="text-4xl btn btn-warning"><FaList /></div>
         </div>
