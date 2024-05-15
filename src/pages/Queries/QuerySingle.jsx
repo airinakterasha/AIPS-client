@@ -57,7 +57,6 @@ const QuerySingle = ({query}) => {
                             </div>
                             <p className="hidden">created At - {createdAt}</p>
                             <p><span className="font-bold">Alternative reason: </span>{boycotReason}</p>
-                            {/* <p>Recommendation count: {queryTitle.recommendations.count}</p> */}
                             <p><span className="font-bold">Recommendation count:</span> {recommendations.length} person recommend the query</p>
                         </div>
                        
