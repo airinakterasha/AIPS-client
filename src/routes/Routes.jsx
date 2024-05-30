@@ -26,7 +26,6 @@ const router = createBrowserRouter([
         {
           path: "/queries",
           element: <Queries></Queries>,
-          loader: () => fetch('https://apis-server.vercel.app/query')
         },
         {
           path: "/recommend-for-me",

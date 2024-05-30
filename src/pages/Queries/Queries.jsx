@@ -1,15 +1,39 @@
 import { useLoaderData } from "react-router-dom"
 import QuerySingle from "./QuerySingle";
 import QueryList from "./QueryList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import { FaList } from "react-icons/fa";
+import Pagination from "../../components/Pagination/Pagination";
 
 
 const Queries = () => {
-  const allQueries = useLoaderData();
   //console.log(allQueries);
+  const [query, setQuery] = useState([]);
+
   const [toggleView, setToggleView] = useState(true);
+
+  const [currentPage, setCurrentPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(2);
+  const [count, setCount] = useState(0);
+
+  const numberOfPages = Math.ceil(count / itemsPerPage);
+
+ const pages = [...Array(numberOfPages).keys()];
+
+
+  useEffect( () =>{
+      fetch('https://apis-server.vercel.app/queryCount')
+      .then(res => res.json())
+      .then(data => setCount(data.count))
+  }, [])
+
+  useEffect(() => {
+      fetch(`https://apis-server.vercel.app/query?page=${currentPage}&size=${itemsPerPage}`)
+          .then(res => res.json())
+          .then(data => setQuery(data))
+  }, [currentPage, itemsPerPage]);
+
 
   const toggleGridView = () => {
     setToggleView(true);
@@ -18,6 +42,27 @@ const Queries = () => {
   const toggleListView = () => {
     setToggleView(false);
   }
+  // pagination start
+
+  const handleItemsPerPage = e => {
+    const val = parseInt(e.target.value);
+    console.log(val);
+    setItemsPerPage(val);
+    setCurrentPage(0);
+  }
+
+  const handlePrevPage = () => {
+      if (currentPage > 0) {
+          setCurrentPage(currentPage - 1);
+      }
+  }
+
+  const handleNextPage = () => {
+      if (currentPage < pages.length - 1) {
+          setCurrentPage(currentPage + 1);
+      }
+  }
+  // pagination end
   
 
   return (
@@ -35,7 +80,7 @@ const Queries = () => {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
               {
-                allQueries.map(query => <QuerySingle key={query._id} query={query}></QuerySingle>)
+                query.map(query => <QuerySingle key={query._id} query={query}></QuerySingle>)
               }
             </div>
           </>
@@ -43,13 +88,24 @@ const Queries = () => {
           <>
             <div className="space-y-5">
               {
-                allQueries.map(listViewQuery => <QueryList key={listViewQuery._id} listViewQuery={listViewQuery}></QueryList>)
+                query.map(listViewQuery => <QueryList key={listViewQuery._id} listViewQuery={listViewQuery}></QueryList>)
               }
             </div>
           </>
           )
         }
         
+      </div>
+      <div className="text-center">
+        <Pagination 
+        pages={pages} 
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        itemsPerPage={itemsPerPage}
+        handleItemsPerPage={handleItemsPerPage} 
+        handlePrevPage={handlePrevPage} 
+        handleNextPage={handleNextPage}
+        ></Pagination>
       </div>
     </>
   )
