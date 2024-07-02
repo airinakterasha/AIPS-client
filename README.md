@@ -3,8 +3,8 @@ AIPS is stand for Alternative Information of Product and Services. AIPS is a web
 
 Live website link - https://apis-client.web.app/
 And,
-github client repository link - https://github.com/Porgramming-Hero-web-course/b9a11-client-side-airinakterasha
-github server repository link - https://github.com/Porgramming-Hero-web-course/b9a11-server-side-airinakterasha
+github client repository link - https://github.com/airinakterasha/AIPS-client
+github server repository link - https://github.com/airinakterasha/AIPS-server
 Assignment Variant Is: Assignment_category_0009
 
 
@@ -38,7 +38,7 @@ In building Dreamtour, I utilized various packages to enhance our development pr
 
 ```bash
 
-git clone https://github.com/Porgramming-Hero-web-course/b9a11-client-side-airinakterasha
+git clone https://github.com/airinakterasha/AIPS-client
 2. Navigate to the project directory:
 cd tourism-client-site
 
